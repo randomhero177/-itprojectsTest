@@ -1,0 +1,178 @@
+@import "./breakpoints.styl"
+@import "./tooltip.styl"
+@import "./components/navigation.styl"
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td
+  border 0
+  margin 0
+  outline 0
+  padding 0
+  vertical-align baseline
+
+body
+  font-family 'Roboto'
+
+.page
+  overflow hidden
+
+img
+  max-width 100%
+
+.main-wrap
+  position relative
+  min-height 100vh
+  &__row
+    min-height calc(100vh - 123px)
+
+.content-pad
+  padding 45px 30px
+
+.input, .vdp-datepicker input
+  border 1px solid #999
+  padding .5rem
+  border-radius 3px
+  display block
+  width 100%
+
+
+.input
+  &_inline
+    display inline-block
+    width auto
+  &-checkbox
+    position relative
+    display inline-block
+    vertical-align middle
+    &__checked
+      display none
+      position absolute
+      left 2px
+      z-index 1
+      bottom 5px
+      font-size 14px
+    & input[type="checkbox"]
+      opacity 0
+      width 15px
+      height 15px
+      position relative
+      z-index 3
+      cursor pointer
+      margin-right 5px
+      &:checked ~ .input-checkbox__checked
+        display block
+    &:before
+      content ""
+      background #fff
+      position absolute
+      display block
+      width 15px
+      height 15px
+      border 1px solid #999
+      border-radius 3px
+      z-index 0
+      bottom 6px
+
+input + input
+  margin-left 10px
+
+.heading
+  margin-bottom 1.25rem
+  &__title
+    font-size 1.25rem
+    font-weight bold
+
+.page__title
+  margin-bottom 2rem
+  font-size 1.75rem
+  font-weight bold
+
+.form
+  &__item
+    margin-bottom 30px
+  &__required
+    color #f00
+  &__title
+    text-transform uppercase
+  &__elem
+    margin-bottom 15px
+  &__label
+    display block
+    font-size 1rem
+    font-family 'Roboto Condensed'
+    margin-bottom .5rem
+  &__picker
+    position relative
+    &-elem
+      position absolute
+      left 0
+      top 100%
+      z-index 5
+
+.content-pad
+  padding-bottom 45px
+  padding-top 45px
+
+.slider
+  margin-top 0!important
+  margin-bottom 0!important
+
+.slide-fade-enter-active
+  transition all .3s ease
+.slide-fade-leave-active
+  transition all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0)
+
+.slide-fade-enter, .slide-fade-leave-to
+  transform translateX(10px)
+  opacity 0
+
+.fade-enter-active, .fade-leave-active
+  transition opacity .5s
+.fade-enter, .fade-leave-to
+  opacity 0
+
+.icon
+  cursor pointer
+  &_add
+    color green
+  &_remove
+    color #ee6e73
+  &_back
+    position relative
+    display inline-block
+    transform rotate(180deg)
+    margin-left 10px
+
+.text-left
+  text-align left
+.text-center
+  text-align center
+.text-right
+  text-align right
+
+.task-list
+  &__item + &__item
+    margin-top 15px
+
+.btn
+  font-size .75rem
+  padding 15px 30px
+  border-radius 3px
+  cursor pointer
+  display inline-block
+  border 0
+  text-decoration none
+  cursor pointer
+  &-success
+    background #26a69a
+    color #fff
+    &__icon
+      color blue
+  &-cancel
+    background #e2e2e2
+    color #333
+  &-remove
+    background #ee6e73
+    color #fff
+  & + .btn
+    margin-left 10px
